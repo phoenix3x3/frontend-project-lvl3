@@ -1,9 +1,9 @@
 // @ts-check
 
-import Example from './Example';
+import View from './View';
 
 export default () => {
   const element = document.getElementById('point');
-  const obj = new Example(element);
+  const obj = new View(element);
   obj.init();
 };
