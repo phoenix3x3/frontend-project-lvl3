@@ -1,6 +1,6 @@
 ### Deploy :
 
-#### https://rss-aggregator-hlz81xxws-phoenix3x3.vercel.app/
+#### https://rss-aggregator-teal.vercel.app/
 
 ### Hexlet tests and linter status:
 
