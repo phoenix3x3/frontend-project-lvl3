@@ -46,14 +46,15 @@ const app = () => {
       .then(() => {
         watchedState.form.errors = [];
         watchedState.form.valid = true;
+        const feedback = document.querySelector('.feedback');
+        feedback.textContent = 'RSS успешно загружен';
         axios
           .get(`${corsApiUrl}${watchedState.form.fields.url}`)
           .then((res) => {
             if (!watchedState.form.errors.length) {
               const { feed, posts } = parse(res.data);
               const feedWithUrl = { ...feed, url: watchedState.form.fields.url };
-              const feedback = document.querySelector('.feedback');
-              feedback.textContent = 'RSS успешно загружен';
+
               watchedState.posts = [...watchedState.posts, ...posts];
               watchedState.feeds.push(feedWithUrl);
               watchedState.form.processState = 'finished';
