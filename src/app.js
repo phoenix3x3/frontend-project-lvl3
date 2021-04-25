@@ -37,9 +37,9 @@ const app = () => {
     watchedState.form.processState = 'filling';
     watchedState.form.fields.url = e.target.value;
   });
-  // const form = document.querySelector('form');
-  const addBtn = document.querySelector('.addBtn');
-  addBtn.addEventListener('click', (e) => {
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     const { url } = watchedState.form.fields;
     const addedURLs = watchedState.feeds.map((feed) => feed.url);
@@ -47,8 +47,8 @@ const app = () => {
       .then(() => {
         watchedState.form.errors = [];
         watchedState.form.valid = true;
-        const feedback = document.querySelector('.feedback');
-        feedback.textContent = 'RSS успешно загружен';
+        // const feedback = document.querySelector('.feedback');
+        // feedback.textContent = 'RSS успешно загружен';
         axios
           .get(`${corsApiUrl}${watchedState.form.fields.url}`)
           .then((res) => {
@@ -104,7 +104,9 @@ const app = () => {
     document.querySelector('.full-article').textContent = i18next.t('readFull');
     document.querySelector('.btn-close').textContent = i18next.t('btnCloseModal');
   });
-  checkForNewPosts(watchedState);
+  setTimeout(() => {
+    checkForNewPosts(watchedState);
+  }, 5000);
 };
 
 export default app;

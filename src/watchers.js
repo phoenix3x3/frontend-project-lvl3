@@ -32,7 +32,7 @@ const updateContent = (state) => {
   if (errors.length) {
     feedback.textContent = errorMessages;
   } else if (state.feeds.length) {
-    feedback.textContent = 'RSS успешно загружен';
+    feedback.textContent = i18next.t('successLoad');
   }
 };
 
@@ -124,7 +124,7 @@ const watchState = (state) => {
   i18next.on('languageChanged', () => updateContent(state));
   const input = document.querySelector('.input-rss');
   return onChange(state, (path, value) => {
-    // console.log(path);
+    console.log(path);
     switch (path) {
       case 'form.valid':
         if (value) {
