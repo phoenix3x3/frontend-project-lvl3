@@ -52,8 +52,8 @@ const app = () => {
             if (!watchedState.form.errors.length) {
               const { feed, posts } = parse(res.data);
               const feedWithUrl = { ...feed, url: watchedState.form.fields.url };
-              // можно закидывать описание постов в отдельный массив объектов, который содержит id и описание
-              // потом при клике смотреть id кликнутой кнопки, искать по нему ссылку и descr
+              const feedback = document.querySelector('.feedback');
+              feedback.textContent = 'RSS успешно загружен';
               watchedState.posts = [...watchedState.posts, ...posts];
               watchedState.feeds.push(feedWithUrl);
               watchedState.form.processState = 'finished';
