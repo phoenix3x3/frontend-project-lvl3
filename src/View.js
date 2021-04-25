@@ -55,6 +55,8 @@ export default class View {
     paragraphEl.classList.add('lead');
     paragraphEl.textContent = 'Начните читать RSS сегодня! Это легко, это красиво.';
     const form = document.createElement('form');
+    form.setAttribute('action', 'true');
+    form.classList.add('rss-form');
     const divFormRow = document.createElement('div');
     divFormRow.classList.add('form-row');
 
