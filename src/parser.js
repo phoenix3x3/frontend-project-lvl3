@@ -14,10 +14,12 @@ export default (xml) => {
   const posts = [];
   items.forEach((item) => {
     const postObj = {
+      id: _.uniqueId(),
       feedId: id,
       postTitle: item.querySelector('title').textContent,
       postDescription: item.querySelector('description').textContent,
       link: item.querySelector('link').textContent,
+      isViewed: false,
     };
     posts.push(postObj);
   });
