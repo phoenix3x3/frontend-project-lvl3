@@ -67,7 +67,7 @@ export default class View {
     input.setAttribute('name', 'url');
     input.id = 'inputInfo';
     // input.placeholder = 'ссылка RSS';
-    inputContainer.setAttribute('role', 'textbox');
+    input.setAttribute('role', 'textbox');
     inputContainer.append(input);
     const submitContainer = document.createElement('div');
     submitContainer.classList.add('col-auto');
