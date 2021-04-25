@@ -32,7 +32,7 @@ const updateContent = (state) => {
   if (errors.length) {
     feedback.textContent = errorMessages;
   } else if (state.feeds.length) {
-    feedback.textContent = i18next.t('successLoad');
+    feedback.textContent = 'RSS успешно загружен';
   }
 };
 
