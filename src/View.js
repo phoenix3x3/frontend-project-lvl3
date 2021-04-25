@@ -66,13 +66,15 @@ export default class View {
     input.setAttribute('name', 'url');
     input.setAttribute('name', 'url');
     input.id = 'inputInfo';
+    input.setAttribute('aria-label', 'url');
+    input.setAttribute('required', 'true');
     // input.placeholder = 'ссылка RSS';
-    input.setAttribute('role', 'textbox');
     inputContainer.append(input);
     const submitContainer = document.createElement('div');
     submitContainer.classList.add('col-auto');
     const submitButton = document.createElement('button');
     submitButton.setAttribute('type', 'submit');
+    submitButton.setAttribute('aria-label', 'add');
     submitButton.classList.add('btn', 'btn-lg', 'btn-primary', 'px-sm-5', 'addBtn');
     submitButton.textContent = i18next.t('btnViewDescription');
     // submitButton.textContent = 'Add';
