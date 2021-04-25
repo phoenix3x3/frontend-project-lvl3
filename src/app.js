@@ -47,6 +47,7 @@ const app = () => {
       .then(() => {
         watchedState.form.errors = [];
         watchedState.form.valid = true;
+        console.log(url);
         // const feedback = document.querySelector('.feedback');
         // feedback.textContent = 'RSS успешно загружен';
         axios
@@ -55,7 +56,8 @@ const app = () => {
             if (!watchedState.form.errors.length) {
               const { feed, posts } = parse(res.data);
               const feedWithUrl = { ...feed, url: watchedState.form.fields.url };
-
+              const feedback = document.querySelector('.feedback');
+              feedback.innerHTML = 'RSS успешно загружен';
               watchedState.posts = [...watchedState.posts, ...posts];
               watchedState.feeds.push(feedWithUrl);
               watchedState.form.processState = 'finished';
@@ -88,8 +90,8 @@ const app = () => {
 
   const postsHandler = document.querySelector('.posts');
   postsHandler.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.target.type !== 'button') return;
+    // e.preventDefault();
+    // if (e.target.type !== 'button') return;
     // console.log(e.target.dataset.id);
     const linkElement = e.target.previousElementSibling;
     linkElement.classList.remove('font-weight-bold');

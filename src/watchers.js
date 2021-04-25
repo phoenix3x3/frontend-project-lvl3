@@ -81,6 +81,7 @@ const renderPosts = (currentPosts) => {
     linkElement.href = link;
     linkElement.textContent = postTitle;
     linkElement.setAttribute('data-id', `${id}`);
+    linkElement.setAttribute('target', '_blank');
     linkElement.classList.add('font-weight-bold');
 
     const btnElement = document.createElement('button');
