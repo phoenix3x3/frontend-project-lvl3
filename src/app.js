@@ -42,6 +42,9 @@ const app = () => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const { url } = watchedState.form.fields;
+    const result = new URL('/get', 'https://hexlet-allorigins.herokuapp.com');
+    result.searchParams.set('url', url);
+    result.searchParams.set('disableCache', true);
     const addedURLs = watchedState.feeds.map((feed) => feed.url);
     validate(url, addedURLs)
       .then(() => {
@@ -50,6 +53,7 @@ const app = () => {
         // const feedback = document.querySelector('.feedback');
         // feedback.textContent = 'RSS успешно загружен';
         axios
+          // .get(`${result}`)
           .get(`${corsApiUrl}${watchedState.form.fields.url}`)
           .then((res) => {
             if (!watchedState.form.errors.length) {
