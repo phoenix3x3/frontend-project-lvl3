@@ -89,6 +89,10 @@ const app = () => {
     e.preventDefault();
     if (e.target.type !== 'button') return;
     // console.log(e.target.dataset.id);
+    const linkElement = e.target.previousElementSibling;
+    linkElement.classList.remove('font-weight-bold');
+    linkElement.classList.add('font-weight-normal');
+
     const [post] = watchedState.posts.filter((el) => el.id === e.target.dataset.id);
     const { postTitle, postDescription, link } = post;
     // watchedState.selectedPost = post;

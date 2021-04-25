@@ -62,6 +62,8 @@ export default class View {
     inputContainer.classList.add('col');
     const input = document.createElement('input');
     input.classList.add('form-control', 'form-control-lg', 'w-100', 'input-rss');
+    input.setAttribute('autofocus', 'true');
+    input.setAttribute('name', 'url');
     input.id = 'inputInfo';
     // input.placeholder = 'ссылка RSS';
     inputContainer.append(input);
