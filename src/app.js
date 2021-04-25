@@ -37,8 +37,9 @@ const app = () => {
     watchedState.form.processState = 'filling';
     watchedState.form.fields.url = e.target.value;
   });
-  const form = document.querySelector('form');
-  form.addEventListener('submit', (e) => {
+  // const form = document.querySelector('form');
+  const addBtn = document.querySelector('.addBtn');
+  addBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const { url } = watchedState.form.fields;
     const addedURLs = watchedState.feeds.map((feed) => feed.url);
