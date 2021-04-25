@@ -86,7 +86,7 @@ export default class View {
     const paragraphHelp = document.createElement('p');
     paragraphHelp.classList.add('text-muted', 'my-1', 'paragraphExample');
     const feedback = document.createElement('div');
-    feedback.classList.add('feedback', 'text-danger');
+    feedback.classList.add('feedback', 'text-success');
     const topRowDiv = document.createElement('div');
     topRowDiv.classList.add('row');
     const rowDivStyleContainer = document.createElement('div');
