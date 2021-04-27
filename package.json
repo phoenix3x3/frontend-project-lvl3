@@ -18,36 +18,35 @@
   "homepage": "https://github.com/phoenix3x3/frontend-project-lvl3#readme",
   "jest": {
     "verbose": true,
-    "testURL": "http://localhost/"
+    "testURL": "http://localhost/",
+    "moduleNameMapper": {
+      "\\.(css|sass)$": "identity-obj-proxy"
+    }
   },
   "devDependencies": {
-    "@babel/core": "7.13.14",
-    "@babel/preset-env": "7.13.12",
-    "@types/jest": "26.0.22",
-    "babel-eslint": "10.1.0",
-    "babel-jest": "26.6.3",
-    "babel-loader": "8.2.2",
-    "debug": "4.3.1",
-    "eslint": "7.24.0",
-    "eslint-config-airbnb": "18.2.1",
-    "eslint-config-airbnb-base": "14.2.1",
-    "eslint-config-prettier": "^8.2.0",
-    "eslint-plugin-babel": "5.3.1",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-jest": "24.3.4",
-    "html-webpack-plugin": "5.3.1",
-    "jest": "26.6.3",
-    "jest-cli": "26.6.3",
-    "webpack": "5.31.0",
-    "webpack-cli": "4.6.0",
-    "webpack-dev-server": "3.11.2"
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.2",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.5",
+    "html-webpack-plugin": "^5.1.0",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "axios": "0.21.1",
-    "bootstrap": "4.6.0",
-    "i18next": "20.2.1",
-    "lodash": "4.17.21",
-    "on-change": "2.2.3",
-    "yup": "0.32.9"
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.0-beta2",
+    "i18next": "^19.9.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-transform-stub": "^2.0.0",
+    "on-change": "^2.2.3",
+    "yup": "^0.32.9"
   }
 }

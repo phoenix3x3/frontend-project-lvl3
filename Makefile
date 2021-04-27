@@ -1,19 +1,30 @@
-develop:
-	npx webpack serve
-
+# For GitHub
 install:
-	npm ci
+	npm install
 
-build:
-	rm -rf dist
-	NODE_ENV=production npx webpack
+lint:
+	npx eslint .
 
+test-coverage:
+	npm test -- --coverage --coverageProvider=v8
+
+# For development
 test:
 	npm test
 
-test-coverage:
-	npm test -- --coverage --coverageProvider=v8 --colors
-lint:
-	npx eslint .
+localtest:
+	npx jest --watch
+
+lintfix:
+	npx eslint . --fix
+
+publish: 
+	npm publish --dry-run
+
+# rebuild: 
+# 	npm unlink gendiff
+# 	npm publish --dry-run
+# 	clear
+# 	npm link
 
 .PHONY: test
