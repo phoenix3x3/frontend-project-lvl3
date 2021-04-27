@@ -47,7 +47,7 @@ const app = () => {
       .then(() => {
         watchedState.form.errors = [];
         watchedState.form.valid = true;
-        console.log(url);
+
         // const feedback = document.querySelector('.feedback');
         // feedback.textContent = 'RSS успешно загружен';
         axios
